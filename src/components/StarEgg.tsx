@@ -61,10 +61,10 @@ export function StarEgg() {
       }`}
       aria-label={
         ready
-          ? 'A door in the sky. Open Hit Me.'
+          ? 'A game waits behind this star. Play Hit Me.'
           : 'A particularly bright star. Linger…'
       }
-      title={ready ? 'Open' : undefined}
+      title={ready ? 'Play a game' : undefined}
       onPointerEnter={beginCharge}
       onPointerLeave={cancelCharge}
       onFocus={beginCharge}
@@ -79,7 +79,7 @@ export function StarEgg() {
       <span className="star-egg__spike star-egg__spike--v" aria-hidden />
       {ready && (
         <span className="star-egg__hint" aria-hidden>
-          open
+          play?
         </span>
       )}
     </button>
