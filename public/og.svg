@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" fill="none">
+  <rect width="1200" height="630" fill="#0B0A08"/>
+  <circle cx="900" cy="315" r="180" stroke="#FFB000" stroke-width="2" opacity="0.5"/>
+  <circle cx="900" cy="315" r="110" stroke="#FFB000" stroke-width="1" opacity="0.35"/>
+  <circle cx="900" cy="315" r="8" fill="#FFB000"/>
+  <circle cx="1040" cy="315" r="6" fill="#EDE6D8"/>
+  <circle cx="800" cy="220" r="4" fill="#A39B8B"/>
+  <circle cx="980" cy="400" r="3" fill="#A39B8B"/>
+  <text x="80" y="260" fill="#FFB000" font-family="IBM Plex Mono, monospace" font-size="28" letter-spacing="8">ORRERY</text>
+  <text x="80" y="340" fill="#EDE6D8" font-family="Georgia, serif" font-size="44">Mission control for autonomous agents</text>
+  <text x="80" y="400" fill="#A39B8B" font-family="IBM Plex Mono, monospace" font-size="18">console · rosetta · terminal · mobile · observatory</text>
+  <text x="80" y="520" fill="#6E675C" font-family="IBM Plex Mono, monospace" font-size="16">An agent is not a chat. It is a process you supervise.</text>
+</svg>
