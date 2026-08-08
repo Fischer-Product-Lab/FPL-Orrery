@@ -5,9 +5,12 @@ import { formatVirtualTime } from '../../engine/store'
 export function AwayRecap({
   recap,
   onDismiss,
+  friendly = false,
 }: {
   recap: RecapDigest
   onDismiss: () => void
+  /** Softer copy for Rosetta / household surfaces */
+  friendly?: boolean
 }) {
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center bg-[var(--color-bg)]/80 p-4">
@@ -15,7 +18,9 @@ export function AwayRecap({
         <div className="border-b border-[var(--color-hairline)] px-4 py-3">
           <SectionLabel>While you were away</SectionLabel>
           <h2 className="display mt-1 text-xl text-[var(--color-text)]">
-            Recap at t+{formatVirtualTime(recap.generatedAt)}
+            {friendly
+              ? 'Here is what happened'
+              : `Recap at t+${formatVirtualTime(recap.generatedAt)}`}
           </h2>
         </div>
         <div className="grid gap-4 px-4 py-4 sm:grid-cols-3">
@@ -25,7 +30,7 @@ export function AwayRecap({
         </div>
         <div className="border-t border-[var(--color-hairline)] px-4 py-3">
           <Button variant="primary" onClick={onDismiss}>
-            Resume supervision
+            {friendly ? 'Continue' : 'Resume supervision'}
           </Button>
         </div>
       </div>

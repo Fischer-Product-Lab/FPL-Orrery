@@ -256,8 +256,11 @@ export function digestLine(session: SessionState): string {
           ? `All ${total} steps done`
           : `${done} of ${total} steps done`
   const timePart = friendlyElapsed(session.virtualTimeMs)
-  const costPart = `$${session.meta.costUsd.toFixed(2)} spent`
-  return `${stepPart} · ${timePart} · ${costPart}`
+  const cost = session.meta.costUsd
+  if (cost > 0) {
+    return `${stepPart} · ${timePart} · About $${cost.toFixed(2)} so far`
+  }
+  return `${stepPart} · ${timePart}`
 }
 
 export function rightNowSentence(session: SessionState): string | null {
