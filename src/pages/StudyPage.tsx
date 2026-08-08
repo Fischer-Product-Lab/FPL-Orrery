@@ -57,6 +57,33 @@ export function StudyPage() {
           hard-stopped orbit with a conjunction beam in the Observatory. Pre-attentive, readable
           across a room. Expertise is a rendering choice, not a different product.
         </p>
+        <ul className="mt-4 space-y-2 text-[13px] leading-relaxed text-[var(--color-text-secondary)]">
+          <li>
+            <strong className="text-[var(--color-text)]">Console</strong> — desk-scale supervision:
+            fleet triage, plan spine, tool cards, gates, and the artifact ledger for operators who
+            want the full instrument panel.
+          </li>
+          <li>
+            <strong className="text-[var(--color-text)]">Rosetta</strong> — plain-language console for
+            anyone in the household or team; altitude adjusts density while the underlying stream
+            stays identical.
+          </li>
+          <li>
+            <strong className="text-[var(--color-text)]">Terminal</strong> — keyboard-native habitat:
+            box-drawing panels and{' '}
+            <code className="text-[var(--color-accent)]">y</code>/
+            <code className="text-[var(--color-accent)]">n</code> where the agent already lives.
+          </li>
+          <li>
+            <strong className="text-[var(--color-text)]">Mobile</strong> — notification companion:
+            interrupt only when judgment is required; hold-to-confirm for spend and irreversible
+            acts.
+          </li>
+          <li>
+            <strong className="text-[var(--color-text)]">Observatory</strong> — ambient wall mode:
+            motion means health, stillness means you are needed, readable across a room.
+          </li>
+        </ul>
       </section>
 
       <Hairline className="my-10" />

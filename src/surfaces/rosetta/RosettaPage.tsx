@@ -169,7 +169,8 @@ export function RosettaPage() {
           <div>
             <SectionLabel>Rosetta</SectionLabel>
             <p className="mt-1 text-[12px] text-[var(--color-text-tertiary)]">
-              Plain language · same agent under the hood ·{' '}
+              Named for the stone that made one decree readable in more than one script · same agent
+              ·{' '}
               <Link to="/console" className="text-[var(--color-accent)]">
                 open technical console
               </Link>
@@ -244,11 +245,12 @@ export function RosettaPage() {
           <div className="mt-6 border border-[var(--color-hairline)] bg-[var(--color-surface)] px-4 py-3">
             <div className="flex items-start justify-between gap-3">
               <div>
-                <SectionLabel>What is an agent?</SectionLabel>
+                <SectionLabel>What this surface is</SectionLabel>
                 <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--color-text-secondary)]">
-                  An agent is a helper that can use tools and work over time (searching, booking,
-                  fixing, training) while you check in when something needs your judgment. You
-                  supervise; it does the steps.
+                  Rosetta translates the same event stream into plain sentences. Altitude (Simple /
+                  Detailed / Technical) changes how much machinery you see; it does not change what
+                  the agent is doing. Technical truth (invocation, output, provenance) stays one
+                  gesture away.
                 </p>
               </div>
               <Button variant="ghost" className="!px-2 !py-1 shrink-0" onClick={dismissExplainer}>
