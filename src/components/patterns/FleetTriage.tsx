@@ -33,7 +33,7 @@ export function FleetTriage({
             <button
               type="button"
               onClick={() => onSelect(s.id)}
-              className={`flex w-full flex-col gap-1 border px-2 py-2 text-left transition-colors ${
+              className={`glint flex w-full flex-col gap-1 border px-2 py-2 text-left transition-colors ${
                 active
                   ? 'border-[var(--color-accent)]/40 bg-[var(--color-accent-dim)]'
                   : 'border-transparent hover:border-[var(--color-hairline)] hover:bg-[var(--color-surface-raised)]'

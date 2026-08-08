@@ -32,7 +32,7 @@ export function DemoClock({ compact = false }: { compact?: boolean }) {
       <span className="text-[var(--color-text-tertiary)]">│</span>
       <Button
         variant="ghost"
-        className="!px-2 !py-1"
+        className="glint !px-2 !py-1"
         onClick={() => (playing ? pause() : play())}
         aria-label={playing ? 'Pause' : 'Play'}
       >
@@ -43,26 +43,26 @@ export function DemoClock({ compact = false }: { compact?: boolean }) {
           <Button
             key={s}
             variant={speed === s ? 'primary' : 'ghost'}
-            className="!px-2 !py-1 tabular"
+            className="glint !px-2 !py-1 tabular"
             onClick={() => setSpeed(s)}
           >
             {s}×
           </Button>
         ))}
       </div>
-      <Button variant="ghost" className="!px-2 !py-1" onClick={jumpToNextEvent}>
+      <Button variant="ghost" className="glint !px-2 !py-1" onClick={jumpToNextEvent}>
         next event
       </Button>
       <Button
         variant="ghost"
-        className="!px-2 !py-1"
+        className="glint !px-2 !py-1"
         onClick={() => skipAhead(4 * 3600 * 1000)}
       >
         skip 4h
       </Button>
       <Button
         variant="ghost"
-        className="!px-2 !py-1"
+        className="glint !px-2 !py-1"
         onClick={() => resetSession(activeSessionId)}
       >
         reset

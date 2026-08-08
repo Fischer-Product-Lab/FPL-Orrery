@@ -1,5 +1,6 @@
 import { NavLink as RRNavLink, Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { Starfield } from './Starfield'
 import { NavLink } from '../kit/primitives'
 import { ThemeSwitcher } from '../kit/ThemeSwitcher'
 import { useThemeStore } from '../kit/theme'
@@ -67,41 +68,44 @@ export function AppShell() {
     location.pathname.startsWith('/observatory')
 
   return (
-    <div className="grain flex min-h-screen flex-col">
-      {!hideChrome && (
-        <header className="sticky top-0 z-30 border-b border-[var(--color-hairline)] bg-[var(--color-bg)]/95 backdrop-blur-sm">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-4 px-4 py-3">
-            <RRNavLink to="/" className="flex items-baseline gap-2">
-              <span className="text-[13px] tracking-[0.2em] text-[var(--color-accent)]">
-                ORRERY
-              </span>
-              <span className="hidden text-[11px] text-[var(--color-text-tertiary)] sm:inline">
-                mission control for agents
-              </span>
-            </RRNavLink>
-            <nav className="ml-auto flex flex-wrap items-center gap-4">
-              {links.map((l) => (
-                <NavLink
-                  key={l.to}
-                  to={l.to}
-                  end={l.end}
-                  active={
-                    l.end
-                      ? location.pathname === l.to
-                      : location.pathname.startsWith(l.to)
-                  }
-                >
-                  {l.label}
-                </NavLink>
-              ))}
-              <ThemeSwitcher />
-            </nav>
-          </div>
-        </header>
-      )}
-      <main className="flex-1">
-        <Outlet />
-      </main>
+    <div className="grain relative flex min-h-screen flex-col">
+      <Starfield />
+      <div className="relative z-10 flex min-h-screen flex-col">
+        {!hideChrome && (
+          <header className="sticky top-0 z-30 border-b border-[var(--color-hairline)] bg-[var(--color-bg)]/85 backdrop-blur-sm">
+            <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-4 px-4 py-3">
+              <RRNavLink to="/" className="flex items-baseline gap-2">
+                <span className="text-[13px] tracking-[0.2em] text-[var(--color-accent)]">
+                  ORRERY
+                </span>
+                <span className="hidden text-[11px] text-[var(--color-text-tertiary)] sm:inline">
+                  mission control for agents
+                </span>
+              </RRNavLink>
+              <nav className="ml-auto flex flex-wrap items-center gap-4">
+                {links.map((l) => (
+                  <NavLink
+                    key={l.to}
+                    to={l.to}
+                    end={l.end}
+                    active={
+                      l.end
+                        ? location.pathname === l.to
+                        : location.pathname.startsWith(l.to)
+                    }
+                  >
+                    {l.label}
+                  </NavLink>
+                ))}
+                <ThemeSwitcher />
+              </nav>
+            </div>
+          </header>
+        )}
+        <main className="flex-1">
+          <Outlet />
+        </main>
+      </div>
     </div>
   )
 }

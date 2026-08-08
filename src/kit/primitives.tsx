@@ -157,9 +157,11 @@ export function Button({
   children,
   ...props
 }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: BtnVariant }) {
+  const sheen =
+    variant === 'primary' || variant === 'outline' ? 'sheen' : ''
   return (
     <button
-      className={`inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-[12px] transition-colors duration-[var(--duration-fast)] disabled:cursor-not-allowed ${btnVariant[variant]} ${className}`}
+      className={`inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-[12px] transition-colors duration-[var(--duration-fast)] disabled:cursor-not-allowed ${sheen} ${btnVariant[variant]} ${className}`}
       {...props}
     >
       {children}
@@ -176,7 +178,7 @@ export function NavLink({
   void _end
   return (
     <Link
-      className={`text-[12px] tracking-wide transition-colors duration-[var(--duration-fast)] ${
+      className={`underline-slide text-[12px] tracking-wide transition-colors duration-[var(--duration-fast)] ${
         active
           ? 'text-[var(--color-accent)]'
           : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text)]'

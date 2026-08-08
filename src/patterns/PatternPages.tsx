@@ -31,7 +31,7 @@ export function PatternsIndexPage() {
           <li key={p.id}>
             <Link
               to={`/patterns/${p.id}`}
-              className="flex items-start gap-4 px-4 py-4 transition-colors hover:bg-[var(--color-surface)]"
+              className="sheen glint flex items-start gap-4 px-4 py-4 transition-colors hover:bg-[var(--color-surface)]"
             >
               <span className="tabular text-[11px] text-[var(--color-text-tertiary)]">
                 {String(i + 1).padStart(2, '0')}

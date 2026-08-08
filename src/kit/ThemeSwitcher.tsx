@@ -60,7 +60,7 @@ export function ThemeSwitcher({ compact = false }: { compact?: boolean }) {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label={`Theme: ${current.name}`}
-        className={`inline-flex items-center gap-2 border border-[var(--color-hairline)] bg-[var(--color-surface)] px-2 py-1 text-[11px] text-[var(--color-text-secondary)] transition-colors hover:border-[var(--color-accent)]/40 hover:text-[var(--color-text)] ${
+        className={`sheen glint inline-flex items-center gap-2 border border-[var(--color-hairline)] bg-[var(--color-surface)] px-2 py-1 text-[11px] text-[var(--color-text-secondary)] transition-colors hover:border-[var(--color-accent)]/40 hover:text-[var(--color-text)] ${
           compact ? '!px-1.5' : ''
         }`}
       >
@@ -90,7 +90,7 @@ export function ThemeSwitcher({ compact = false }: { compact?: boolean }) {
                   setTheme(t.id)
                   setOpen(false)
                 }}
-                className={`flex w-full items-center gap-2 px-3 py-2 text-left text-[12px] transition-colors ${
+                className={`glint flex w-full items-center gap-2 px-3 py-2 text-left text-[12px] transition-colors ${
                   active
                     ? 'bg-[var(--color-accent-dim)] text-[var(--color-accent)]'
                     : 'text-[var(--color-text)] hover:bg-[var(--color-surface-raised)]'

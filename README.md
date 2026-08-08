@@ -8,7 +8,7 @@
 
 ORRERY is a portfolio design exploration: five surfaces reading one simulated event stream. Built to argue that agentic work needs supervision structure (plans, tools, gates, ledgers, triage), not a longer transcript.
 
-This is a **fictional** product. The case study maps patterns onto [Hermes Agent](https://hermes-agent.nousresearch.com/docs/) and [Nous Portal](https://portal.nousresearch.com/) as design coda. It is not affiliated with Nous Research.
+This is a **fictional** product: a design exploration of how humans supervise long-running agents across desk, terminal, phone, wall, and plain language.
 
 ---
 
@@ -37,7 +37,7 @@ ORRERY treats those as first-class interface objects and asks what they look lik
 | `/terminal` | Instrument TUI | Keyboard-native, box-drawing, `y`/`n` |
 | `/mobile` | Companion | Notification-driven; hold-to-confirm |
 | `/patterns` | Pattern library | Eleven named patterns with live strips |
-| `/study` | Case study | Problem, IA, type, motion, Hermes mapping |
+| `/study` | Case study | Problem, IA, type, motion, and where the patterns land |
 
 All five operational surfaces share the same Zustand session store. Expertise is a rendering choice, not a fork of the product.
 
@@ -177,4 +177,4 @@ If you have ten minutes:
 
 ## License / attribution
 
-Portfolio work © Fischer Product Lab. Hermes Agent and Nous Portal names appear only in the case-study mapping and remain the property of their owners.
+Portfolio work © Fischer Product Lab.

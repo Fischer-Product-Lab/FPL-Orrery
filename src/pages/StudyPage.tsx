@@ -100,7 +100,7 @@ export function StudyPage() {
             <li key={p.id}>
               <Link
                 to={`/patterns/${p.id}`}
-                className="text-[13px] text-[var(--color-text)] hover:text-[var(--color-accent)]"
+                className="underline-slide text-[13px] text-[var(--color-text)] hover:text-[var(--color-accent)]"
               >
                 {p.name}
               </Link>
@@ -114,49 +114,51 @@ export function StudyPage() {
 
       <section className="space-y-4">
         <SectionLabel>06 · Coda</SectionLabel>
-        <h2 className="display text-2xl text-[var(--color-accent)]">Translated to Hermes</h2>
+        <h2 className="display text-2xl text-[var(--color-accent)]">What this is for</h2>
         <p className="text-[13px] leading-relaxed text-[var(--color-text-secondary)]">
-          ORRERY is not a Hermes redesign. It is a pattern language aimed at the same problem space
-          Hermes Agent and Nous Portal occupy. A mapping:
+          ORRERY is a pattern language for supervising long-running agents: the same work, readable at
+          different altitudes. The patterns are meant to travel into real operator surfaces, not to
+          stay as a demo aesthetic. Where they land in practice:
         </p>
         <ul className="space-y-3 text-[13px] leading-relaxed text-[var(--color-text-secondary)]">
           <li>
-            <strong className="text-[var(--color-text)]">Approval Gates</strong> → Hermes TUI modal
-            overlays; extend with Portal credit cost and hold-to-confirm for destructive Tool
-            Gateway calls.
+            <strong className="text-[var(--color-text)]">Approval Gates</strong> → when spend or
+            irreversible action is on the table, the human gets evidence, cost, and a deliberate
+            confirm, not a bare yes/no buried in scroll.
           </li>
           <li>
-            <strong className="text-[var(--color-text)]">While You Were Away</strong> → Hermes Cloud
-            / Daytona / Modal agents checked later from Telegram or the web dashboard. Re-entry needs
-            a digest, not a log dump.
+            <strong className="text-[var(--color-text)]">While You Were Away</strong> → agents that
+            keep working overnight or on remote machines need a digest on return, not a log dump.
           </li>
           <li>
-            <strong className="text-[var(--color-text)]">Memory & Skill Moments</strong> → Hermes's
-            learning loop (skill creation, self-improvement, user modeling) made visible and
+            <strong className="text-[var(--color-text)]">Memory & Skill Moments</strong> → when an
+            agent learns a preference or proposes a reusable skill, that inference must be visible and
             correctable.
           </li>
           <li>
-            <strong className="text-[var(--color-text)]">Fleet Triage</strong> → cron automations +
-            subagents + multiple cloud instances ranked by who needs the human.
+            <strong className="text-[var(--color-text)]">Fleet Triage</strong> → when many agents run
+            at once (cron, subagents, parallel jobs), attention ranks by who needs the human, not by
+            recency alone.
           </li>
           <li>
-            <strong className="text-[var(--color-text)]">Tool Cards</strong> → streaming tool output
-            in CLI/TUI with risk borders for shell and purchase tools.
+            <strong className="text-[var(--color-text)]">Tool Cards</strong> → every tool call shows
+            intent, invocation, and result, with risk made obvious for shell, purchase, and other
+            high-stakes actions.
           </li>
           <li>
-            <strong className="text-[var(--color-text)]">Plan Spine / Interrupt & Steer</strong> →
-            Hermes's interrupt-and-redirect made structural across surfaces.
+            <strong className="text-[var(--color-text)]">Plan Spine / Interrupt & Steer</strong> → the
+            plan stays scannable while the run is alive, and the human can redirect without killing
+            the process.
           </li>
           <li>
-            <strong className="text-[var(--color-text)]">Ambient Supervision</strong> → a wall-display
-            mode for Hermes Cloud instances and cron fleets. The idle dashboard's next form, and a
-            complement to checking in from Telegram.
+            <strong className="text-[var(--color-text)]">Ambient Supervision</strong> → for the hours
+            you are not watching: motion means health, stillness means you are needed. A wall or desk
+            display, not another feed to babysit.
           </li>
           <li>
-            <strong className="text-[var(--color-text)]">Show the Work / intelligence for all</strong>{' '}
-            → non-technical operators supervising Hermes Cloud agents from the dashboard or Telegram.
-            Same learning-loop agent, readable by everyone in the household or team. Plain language by
-            default; full technical truth one gesture away.
+            <strong className="text-[var(--color-text)]">Show the Work</strong> → plain language by
+            default for anyone in the household or team; full technical truth one gesture away. Same
+            agent, adjustable altitude.
           </li>
         </ul>
       </section>
@@ -172,10 +174,9 @@ export function StudyPage() {
           Space, and Andromeda). Colors and fonts apply as CSS custom properties; the canvas recolors
           via getComputedStyle. Press <code className="text-[var(--color-accent)]">t</code> to cycle.
           Default fonts: Newsreader + IBM Plex Mono. No backend: sessions are scripted and played on a
-          virtual clock. Fictional product; Hermes and Nous Portal referenced only in this case-study
-          mapping. Process: thesis → art direction → event schema → scripts → five surfaces → pattern
-          language → Ambient Supervision → Rosetta / Show the Work → tokens-over-literals themes.
-          Eleven named patterns.
+          virtual clock. Fictional product built as a design exploration of agent supervision. Process:
+          thesis → art direction → event schema → scripts → five surfaces → pattern language → Ambient
+          Supervision → Rosetta / Show the Work → tokens-over-literals themes. Eleven named patterns.
         </p>
         <p className="text-[12px] text-[var(--color-text-tertiary)]">
           <Link to="/rosetta" className="text-[var(--color-accent)]">

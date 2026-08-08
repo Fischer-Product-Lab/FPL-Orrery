@@ -352,7 +352,7 @@ export function RosettaPage() {
                   key={key}
                   type="button"
                   onClick={() => setFeedFilter(key)}
-                  className={`border px-2 py-1 text-[11px] transition-colors ${
+                  className={`glint border px-2 py-1 text-[11px] transition-colors ${
                     feedFilter === key
                       ? 'border-[var(--color-accent)]/40 bg-[var(--color-accent-dim)] text-[var(--color-accent)]'
                       : 'border-[var(--color-hairline)] text-[var(--color-text-tertiary)] hover:text-[var(--color-text-secondary)]'
@@ -475,7 +475,7 @@ export function RosettaPage() {
                   setSteerDraft(s)
                   steerRef.current?.focus()
                 }}
-                className="border border-[var(--color-hairline)] px-2.5 py-1.5 text-[12px] text-[var(--color-text-secondary)] transition-colors hover:border-[var(--color-accent)]/40 hover:text-[var(--color-accent)]"
+                className="glint border border-[var(--color-hairline)] px-2.5 py-1.5 text-[12px] text-[var(--color-text-secondary)] transition-colors hover:border-[var(--color-accent)]/40 hover:text-[var(--color-accent)]"
               >
                 {s}
               </button>
@@ -530,7 +530,7 @@ function AltitudeControl({
   ]
   return (
     <div
-      className="inline-flex border border-[var(--color-hairline)] p-0.5"
+      className="glint inline-flex border border-[var(--color-hairline)] p-0.5"
       role="radiogroup"
       aria-label="Altitude"
     >
@@ -541,7 +541,7 @@ function AltitudeControl({
           role="radio"
           aria-checked={value === o.id}
           onClick={() => onChange(o.id)}
-          className={`px-2.5 py-1.5 text-[11px] tracking-wide transition-colors ${
+          className={`glint px-2.5 py-1.5 text-[11px] tracking-wide transition-colors ${
             value === o.id
               ? 'bg-[var(--color-accent-dim)] text-[var(--color-accent)]'
               : 'text-[var(--color-text-tertiary)] hover:text-[var(--color-text-secondary)]'
@@ -589,7 +589,7 @@ function MomentCard({
       className={`${
         nested
           ? 'border-0 bg-transparent px-0 py-1'
-          : 'border border-[var(--color-hairline)] bg-[var(--color-surface)] px-4 py-3'
+          : 'glint border border-[var(--color-hairline)] bg-[var(--color-surface)] px-4 py-3'
       } ${highlight && !nested ? 'phosphor' : ''}`}
     >
       <div className="mb-1.5 flex items-center gap-2 text-[10px] text-[var(--color-text-tertiary)]">

@@ -1,3 +1,4 @@
+import { useCallback, useRef, type PointerEvent as ReactPointerEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { OrreryScene } from '../components/orrery/OrreryScene'
 import { Button, Chip, Hairline, SectionLabel } from '../kit/primitives'
@@ -5,51 +6,71 @@ import { useActiveTheme } from '../kit/theme'
 
 export function LandingPage() {
   const theme = useActiveTheme()
+  const heroRef = useRef<HTMLElement>(null)
+
+  const onHeroPointer = useCallback((e: ReactPointerEvent<HTMLElement>) => {
+    const el = heroRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / Math.max(1, rect.width)) * 100
+    const y = ((e.clientY - rect.top) / Math.max(1, rect.height)) * 100
+    el.style.setProperty('--mx', `${x}%`)
+    el.style.setProperty('--my', `${y}%`)
+  }, [])
 
   return (
     <div>
       {/* Living hero */}
-      <section className="relative border-b border-[var(--color-hairline)]">
-        <div className="mx-auto grid min-h-[85vh] max-w-7xl lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
-          <div className="flex flex-col justify-center px-4 py-10 sm:px-6 lg:py-16">
-            <SectionLabel>Design exploration</SectionLabel>
-            <h1 className="display mt-3 text-4xl leading-tight text-[var(--color-text)] sm:text-5xl">
-              An agent is not a chat.
-              <br />
-              <span className="text-[var(--color-accent)]">It is a process you supervise.</span>
-            </h1>
-            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[var(--color-text-secondary)]">
-              ORRERY is a mission-control interface for autonomous agents. One event stream, five
-              surfaces: technical console, Rosetta (plain language), terminal TUI, mobile companion,
-              and a living orbital instrument. Altitude is adjustable. The underlying work is not.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link to="/rosetta">
-                <Button variant="primary">Open Rosetta</Button>
-              </Link>
-              <Link to="/console">
-                <Button variant="outline">Technical console</Button>
-              </Link>
-              <Link to="/observatory">
-                <Button variant="ghost">Observatory</Button>
-              </Link>
-              <Link to="/patterns">
-                <Button variant="ghost">Patterns</Button>
-              </Link>
+      <section
+        ref={heroRef}
+        onPointerMove={onHeroPointer}
+        className="spotlight relative border-b border-[var(--color-hairline)]"
+      >
+        <div className="relative z-[1] mx-auto grid min-h-[85vh] max-w-7xl lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
+          <div className="graticule relative flex flex-col justify-center px-4 py-10 sm:px-6 lg:py-16">
+            <div className="relative z-[1]">
+              <SectionLabel>Design exploration</SectionLabel>
+              <h1 className="display mt-3 text-4xl leading-tight text-[var(--color-text)] sm:text-5xl">
+                An agent is not a chat.
+                <br />
+                <span className="text-[var(--color-accent)]">It is a process you supervise.</span>
+              </h1>
+              <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[var(--color-text-secondary)]">
+                ORRERY is a mission-control interface for autonomous agents. One event stream, five
+                surfaces: technical console, Rosetta (plain language), terminal TUI, mobile companion,
+                and a living orbital instrument. Altitude is adjustable. The underlying work is not.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link to="/rosetta">
+                  <Button variant="primary">Open Rosetta</Button>
+                </Link>
+                <Link to="/console">
+                  <Button variant="outline">Technical console</Button>
+                </Link>
+                <Link to="/observatory">
+                  <Button variant="ghost">Observatory</Button>
+                </Link>
+                <Link to="/patterns">
+                  <Button variant="ghost">Patterns</Button>
+                </Link>
+              </div>
+              <p className="mt-6 max-w-md text-[11px] leading-relaxed text-[var(--color-text-tertiary)]">
+                The orrery is live. Linger and an orbit will halt when an agent needs approval.
+                Stillness means you are needed. Click a planet to enter that session.
+              </p>
             </div>
-            <p className="mt-6 max-w-md text-[11px] leading-relaxed text-[var(--color-text-tertiary)]">
-              The orrery is live. Linger and an orbit will halt when an agent needs approval.
-              Stillness means you are needed. Click a planet to enter that session.
-            </p>
           </div>
 
-          <div className="flex h-full min-h-[50vh] flex-col border-t border-[var(--color-hairline)] lg:border-t-0 lg:border-l">
+          <div className="relative z-[1] flex h-full min-h-[50vh] flex-col border-t border-[var(--color-hairline)] bg-[var(--color-bg)]/40 lg:border-t-0 lg:border-l">
             <div className="relative min-h-[50vh] flex-1 lg:min-h-[calc(85vh-2rem)]">
               <OrreryScene variant="hero" />
             </div>
             <div className="border-t border-[var(--color-hairline)] px-4 py-2 text-[10px] text-[var(--color-text-tertiary)]">
               Live: these are the same sessions you will supervise inside ·{' '}
-              <Link to="/observatory" className="text-[var(--color-accent)]">
+              <Link
+                to="/observatory"
+                className="underline-slide text-[var(--color-accent)]"
+              >
                 full observatory
               </Link>
             </div>
@@ -57,7 +78,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
+      <div className="relative z-[1] mx-auto max-w-5xl px-4 py-12 sm:py-16">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           <SurfaceCard
             label="01 · Web"
@@ -113,7 +134,7 @@ export function LandingPage() {
               <Swatch token="--color-success" label="ok" />
             </div>
           </div>
-          <div className="border border-[var(--color-hairline)] bg-[var(--color-surface)] p-5">
+          <div className="glint border border-[var(--color-hairline)] bg-[var(--color-surface)]/90 p-5">
             <SectionLabel>Thesis</SectionLabel>
             <p className="thought mt-3 text-[18px] leading-relaxed text-[var(--color-text)]">
               Chat is a transcript. Supervision is a control surface: plans, tools, gates, artifacts,
@@ -121,7 +142,7 @@ export function LandingPage() {
             </p>
             <Link
               to="/study"
-              className="mt-4 inline-block text-[12px] text-[var(--color-accent)] hover:underline"
+              className="underline-slide mt-4 inline-block text-[12px] text-[var(--color-accent)]"
             >
               Read the case study →
             </Link>
@@ -151,6 +172,7 @@ export function LandingPage() {
                 tone={
                   name === 'Show the Work' || name === 'Ambient Supervision' ? 'accent' : 'default'
                 }
+                className="glint"
               >
                 {name}
               </Chip>
@@ -176,7 +198,7 @@ function SurfaceCard({
   return (
     <Link
       to={to}
-      className="block border border-[var(--color-hairline)] bg-[var(--color-surface)] p-4 transition-colors hover:border-[var(--color-accent)]/40"
+      className="sheen glint block border border-[var(--color-hairline)] bg-[var(--color-surface)]/90 p-4"
     >
       <div className="text-[10px] uppercase tracking-[0.14em] text-[var(--color-text-tertiary)]">
         {label}
@@ -191,7 +213,7 @@ function Swatch({ token, label }: { token: string; label: string }) {
   const theme = useActiveTheme()
   const value = theme.tokens[token as keyof typeof theme.tokens] ?? ''
   return (
-    <div className="flex items-center gap-2 border border-[var(--color-hairline)] px-2 py-1">
+    <div className="glint flex items-center gap-2 border border-[var(--color-hairline)] bg-[var(--color-surface)]/80 px-2 py-1">
       <span
         className="size-3 border border-[var(--color-hairline)]"
         style={{ background: `var(${token})` }}
