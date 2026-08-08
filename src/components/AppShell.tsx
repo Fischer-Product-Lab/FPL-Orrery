@@ -1,5 +1,6 @@
 import { NavLink as RRNavLink, Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { StarEgg } from './StarEgg'
 import { Starfield } from './Starfield'
 import { NavLink } from '../kit/primitives'
 import { ThemeSwitcher } from '../kit/ThemeSwitcher'
@@ -75,6 +76,7 @@ export function AppShell() {
     <div className="grain relative flex min-h-screen flex-col">
       {/* Landing uses a CSS hero-torch above the grid; canvas flashlight would hard-clip under content. */}
       <Starfield intensity={starIntensity} flashlight={!isLanding} />
+      {isLanding && <StarEgg />}
       <div className="relative z-10 flex min-h-screen flex-col">
         {!hideChrome && (
           <header className="sticky top-0 z-30 border-b border-[var(--color-hairline)] bg-[var(--color-bg)]/85 backdrop-blur-sm">

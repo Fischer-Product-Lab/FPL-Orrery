@@ -317,4 +317,214 @@
       transparent 60%
     );
   }
+
+  .star-egg.is-charging .star-egg__ring,
+  .star-egg.is-charging .star-egg__ring--late,
+  .star-egg.is-charging .star-egg__halo {
+    animation: none;
+  }
+
+  .star-egg.is-ready .star-egg__core {
+    animation: none;
+  }
+}
+
+/* ── Star egg easter egg (landing corner) ─────────────────────── */
+.star-egg {
+  --egg-size: 14px;
+  position: fixed;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 25;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: default;
+  color: var(--color-accent);
+}
+
+.star-egg.is-ready {
+  cursor: pointer;
+}
+
+.star-egg__core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--egg-size);
+  height: var(--egg-size);
+  margin: calc(var(--egg-size) / -2) 0 0 calc(var(--egg-size) / -2);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, #fff 0%, var(--color-accent) 42%, transparent 70%);
+  box-shadow:
+    0 0 10px var(--color-accent-glow),
+    0 0 22px color-mix(in srgb, var(--color-accent) 45%, transparent);
+  opacity: 0.75;
+  transition:
+    opacity var(--duration-base) var(--ease-standard),
+    transform var(--duration-base) var(--ease-standard);
+}
+
+.star-egg__halo {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-accent) 28%, transparent),
+    transparent 70%
+  );
+  opacity: 0.35;
+  transition: opacity 0.4s var(--ease-standard);
+}
+
+.star-egg__ring {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 0%, transparent);
+  opacity: 0;
+  transform: scale(0.4);
+}
+
+.star-egg__spike {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: var(--color-accent);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.star-egg__spike--h {
+  width: 22px;
+  height: 1px;
+  margin: -0.5px 0 0 -11px;
+}
+
+.star-egg__spike--v {
+  width: 1px;
+  height: 16px;
+  margin: -8px 0 0 -0.5px;
+}
+
+.star-egg__hint {
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  transform: translateX(-50%);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  opacity: 0.85;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.star-egg:hover .star-egg__core,
+.star-egg:focus-visible .star-egg__core {
+  opacity: 1;
+}
+
+.star-egg.is-charging .star-egg__core {
+  opacity: 1;
+  animation: star-egg-pulse 0.7s var(--ease-standard) infinite;
+}
+
+.star-egg.is-charging .star-egg__halo {
+  opacity: 0.85;
+  animation: star-egg-halo 2.6s var(--ease-standard) forwards;
+}
+
+.star-egg.is-charging .star-egg__ring {
+  animation: star-egg-ring 2.6s var(--ease-standard) forwards;
+}
+
+.star-egg.is-charging .star-egg__ring--late {
+  animation-delay: 0.35s;
+}
+
+.star-egg.is-ready .star-egg__core {
+  opacity: 1;
+  transform: scale(1.15);
+  box-shadow:
+    0 0 14px var(--color-accent-glow),
+    0 0 36px color-mix(in srgb, var(--color-accent) 55%, transparent),
+    0 0 60px color-mix(in srgb, var(--color-accent) 25%, transparent);
+  animation: star-egg-ready 1.8s var(--ease-standard) infinite;
+}
+
+.star-egg.is-ready .star-egg__halo {
+  opacity: 0.9;
+}
+
+.star-egg.is-ready .star-egg__spike {
+  opacity: 0.75;
+}
+
+.star-egg.is-departing .star-egg__core {
+  animation: star-egg-depart 0.85s var(--ease-entrance) forwards;
+}
+
+@keyframes star-egg-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes star-egg-halo {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1.35);
+  }
+}
+
+@keyframes star-egg-ring {
+  0% {
+    opacity: 0;
+    transform: scale(0.35);
+    border-color: color-mix(in srgb, var(--color-accent) 70%, transparent);
+  }
+  35% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+    border-color: color-mix(in srgb, var(--color-accent) 0%, transparent);
+  }
+}
+
+@keyframes star-egg-ready {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.35);
+  }
+}
+
+@keyframes star-egg-depart {
+  0% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.2) translateY(-40px);
+    opacity: 0;
+  }
 }
