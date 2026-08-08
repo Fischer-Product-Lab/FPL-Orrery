@@ -267,6 +267,8 @@
 }
 
 /* ── Spotlight: cursor-following accent wash ──────────────────── */
+/* Sits above hero content and blends in, so full-bleed columns cannot
+   hard-clip the glow the way a z-0 layer under a z-1 grid does. */
 .spotlight {
   --mx: 50%;
   --my: 40%;
@@ -278,14 +280,23 @@
   pointer-events: none;
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 4;
   background: radial-gradient(
     420px circle at var(--mx) var(--my),
-    color-mix(in srgb, var(--color-accent) 5%, transparent),
-    transparent 55%
+    color-mix(in srgb, var(--color-accent) 14%, transparent),
+    color-mix(in srgb, var(--color-accent) 4%, transparent) 35%,
+    transparent 58%
   );
-  opacity: 0.9;
+  mix-blend-mode: screen;
+  opacity: 1;
   transition: opacity var(--duration-slow) var(--ease-standard);
+}
+
+@supports not (mix-blend-mode: screen) {
+  .spotlight::after {
+    z-index: 0;
+    opacity: 0.9;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -28,6 +28,7 @@ export function LandingPage() {
       >
         <div className="relative z-[1] mx-auto grid min-h-[85vh] max-w-7xl lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
           <div className="graticule relative flex flex-col justify-center px-4 py-10 sm:px-6 lg:py-16">
+            {/* Text stays below the spotlight blend layer (z-4); no opaque fill so sky reads through */}
             <div className="relative z-[1]">
               <SectionLabel>Design exploration</SectionLabel>
               <h1 className="display mt-3 text-4xl leading-tight text-[var(--color-text)] sm:text-5xl">
