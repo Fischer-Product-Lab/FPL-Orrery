@@ -266,37 +266,28 @@
   -webkit-mask-image: radial-gradient(ellipse 70% 65% at 40% 45%, #000 20%, transparent 75%);
 }
 
-/* ── Spotlight: cursor-following accent wash ──────────────────── */
-/* Sits above hero content and blends in, so full-bleed columns cannot
-   hard-clip the glow the way a z-0 layer under a z-1 grid does. */
+/* ── Spotlight vars + hero torch overlay ──────────────────────── */
+/* --mx/--my live on .spotlight. The wash itself is .hero-torch: a real
+   last-child overlay above the hero grid so content columns cannot clip it.
+   (Pseudo-element + mix-blend was still losing the stacking fight.) */
 .spotlight {
   --mx: 50%;
   --my: 40%;
   position: relative;
+  isolation: isolate;
 }
 
-.spotlight::after {
-  content: "";
+.hero-torch {
   pointer-events: none;
   position: absolute;
   inset: 0;
-  z-index: 4;
+  z-index: 20;
   background: radial-gradient(
-    420px circle at var(--mx) var(--my),
-    color-mix(in srgb, var(--color-accent) 14%, transparent),
-    color-mix(in srgb, var(--color-accent) 4%, transparent) 35%,
-    transparent 58%
+    460px circle at var(--mx) var(--my),
+    color-mix(in srgb, var(--color-accent) 22%, transparent),
+    color-mix(in srgb, var(--color-accent) 8%, transparent) 38%,
+    transparent 62%
   );
-  mix-blend-mode: screen;
-  opacity: 1;
-  transition: opacity var(--duration-slow) var(--ease-standard);
-}
-
-@supports not (mix-blend-mode: screen) {
-  .spotlight::after {
-    z-index: 0;
-    opacity: 0.9;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -319,10 +310,10 @@
     transition: none;
   }
 
-  .spotlight::after {
+  .hero-torch {
     background: radial-gradient(
       ellipse 60% 50% at 40% 35%,
-      color-mix(in srgb, var(--color-accent) 6%, transparent),
+      color-mix(in srgb, var(--color-accent) 12%, transparent),
       transparent 60%
     );
   }

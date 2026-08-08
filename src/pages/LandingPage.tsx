@@ -26,10 +26,9 @@ export function LandingPage() {
         onPointerMove={onHeroPointer}
         className="spotlight relative border-b border-[var(--color-hairline)]"
       >
-        <div className="relative z-[1] mx-auto grid min-h-[85vh] max-w-7xl lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
+        <div className="relative mx-auto grid min-h-[85vh] max-w-7xl lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
           <div className="graticule relative flex flex-col justify-center px-4 py-10 sm:px-6 lg:py-16">
-            {/* Text stays below the spotlight blend layer (z-4); no opaque fill so sky reads through */}
-            <div className="relative z-[1]">
+            <div>
               <SectionLabel>Design exploration</SectionLabel>
               <h1 className="display mt-3 text-4xl leading-tight text-[var(--color-text)] sm:text-5xl">
                 An agent is not a chat.
@@ -62,7 +61,7 @@ export function LandingPage() {
             </div>
           </div>
 
-          <div className="relative z-[1] flex h-full min-h-[50vh] flex-col border-t border-[var(--color-hairline)] bg-[var(--color-bg)]/40 lg:border-t-0 lg:border-l">
+          <div className="relative flex h-full min-h-[50vh] flex-col border-t border-[var(--color-hairline)] bg-[var(--color-bg)]/40 lg:border-t-0 lg:border-l">
             <div className="relative min-h-[50vh] flex-1 lg:min-h-[calc(85vh-2rem)]">
               <OrreryScene variant="hero" />
             </div>
@@ -77,6 +76,8 @@ export function LandingPage() {
             </div>
           </div>
         </div>
+        {/* Last child, above the grid — cannot be clipped by column stacking contexts */}
+        <div className="hero-torch" aria-hidden />
       </section>
 
       <div className="relative z-[1] mx-auto max-w-5xl px-4 py-12 sm:py-16">

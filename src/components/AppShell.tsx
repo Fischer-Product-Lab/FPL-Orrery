@@ -68,11 +68,13 @@ export function AppShell() {
     location.pathname.startsWith('/observatory')
 
   // Full atmosphere on the landing hero; quiet elsewhere so dense pages stay readable.
-  const starIntensity = location.pathname === '/' ? 1 : 0.45
+  const isLanding = location.pathname === '/'
+  const starIntensity = isLanding ? 1 : 0.45
 
   return (
     <div className="grain relative flex min-h-screen flex-col">
-      <Starfield intensity={starIntensity} />
+      {/* Landing uses a CSS hero-torch above the grid; canvas flashlight would hard-clip under content. */}
+      <Starfield intensity={starIntensity} flashlight={!isLanding} />
       <div className="relative z-10 flex min-h-screen flex-col">
         {!hideChrome && (
           <header className="sticky top-0 z-30 border-b border-[var(--color-hairline)] bg-[var(--color-bg)]/85 backdrop-blur-sm">

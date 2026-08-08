@@ -433,12 +433,21 @@ function wrapDraw(
   ctx.globalAlpha = 1
 }
 
-export function Starfield({ intensity = 1 }: { intensity?: number }) {
+export function Starfield({
+  intensity = 1,
+  /** Canvas nebula torch. Off on landing — hero uses a CSS overlay that cannot be clipped by content columns. */
+  flashlight = true,
+}: {
+  intensity?: number
+  flashlight?: boolean
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const themeId = useThemeStore((s) => s.themeId)
   const isDark = getTheme(themeId).isDark
   const intensityRef = useRef(intensity)
   intensityRef.current = intensity
+  const flashlightRef = useRef(flashlight)
+  flashlightRef.current = flashlight
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -678,7 +687,9 @@ export function Starfield({ intensity = 1 }: { intensity?: number }) {
           h,
           0.55 * layerA,
         )
-        drawFlashlight(cursorX, cursorY, layerA)
+        if (flashlightRef.current) {
+          drawFlashlight(cursorX, cursorY, layerA)
+        }
       }
 
       if (deepLayer) {
