@@ -170,17 +170,18 @@ export const patterns: PatternDef[] = [
     name: 'Show the Work',
     tagline: 'Plain language by default; full technical truth one gesture away.',
     definition:
-      'Show the Work is the pattern behind Rosetta, the plain-language console named for the stone that made one decree readable in every script. Every agent action is rendered in plain language first, with a reversible disclosure to the raw invocation, output, and timestamps. Expertise becomes a rendering choice. Nothing is deleted for accessibility; altitude is adjustable. That is "intelligence for all" as an interface, not a slogan.',
+      'Show the Work is the pattern behind Rosetta, the plain-language console named for the stone that made one decree readable in every script. Every agent action is rendered in plain language first, with a reversible disclosure to a structured work panel (invocation, output, provenance, timing). Expertise becomes a rendering choice. Nothing is deleted for accessibility; altitude is adjustable. That is "intelligence for all" as an interface, not a slogan.',
     when:
       'Any product where technical and non-technical people supervise the same agents: households, teams, operators checking Hermes Cloud from a phone.',
     anatomy: [
-      'Status sentence (not a chip)',
-      'Friendly journey checklist',
-      'Translated moment cards',
-      'Per-card "How did it do this?" disclosure',
-      'Global "Show technical detail" toggle',
+      'Status sentence with state dot and plan meter',
+      'Altitude control (Simple / Detailed / Technical)',
+      'Pinned needs-you decision dock',
+      'Translated moment cards with friendly time',
+      'Per-card "How did it do this?" work panel',
+      'Structured work panel: invocation / output / provenance',
     ],
-    states: ['plain', 'disclosed', 'global technical'],
+    states: ['simple', 'detailed', 'technical', 'disclosed'],
     doExample:
       'Keep the technical layer one reversible gesture away. Never a separate product or a dumbed-down fork.',
     dontExample:

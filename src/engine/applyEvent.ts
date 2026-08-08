@@ -106,6 +106,7 @@ export function applyEvent(state: SessionState, event: SessionEvent): SessionSta
         status: 'running' as const,
         output: '',
         stepId: event.stepId,
+        startedAt: event.t,
       }
       next.tools[event.toolCallId] = tool
       next.feed.push({ kind: 'tool', id: event.id, tool, at: event.t })
@@ -134,6 +135,7 @@ export function applyEvent(state: SessionState, event: SessionEvent): SessionSta
           ...existing,
           status: event.failed ? ('failed' as const) : ('done' as const),
           resultChip: event.resultChip,
+          completedAt: event.t,
         }
         next.tools[event.toolCallId] = updated
         next.feed = next.feed.map((item) =>

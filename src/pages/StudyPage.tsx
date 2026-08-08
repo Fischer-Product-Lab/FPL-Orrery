@@ -167,10 +167,10 @@ export function StudyPage() {
         <SectionLabel>Colophon</SectionLabel>
         <p className="text-[12px] leading-relaxed text-[var(--color-text-tertiary)]">
           Stack: Vite, React 19, TypeScript, Tailwind CSS v4, Zustand, React Router, Canvas 2D
-          orrery. Theme system: nine skins from one TypeScript token registry (Observatory, Ayu
-          Darkvenom, Dark Phoenix, Ethereal Omarchy, Material, Midnight, Nousromancer, Tokyo Night,
-          Everforest Light). Colors and fonts apply as CSS custom properties; the canvas recolors via
-          getComputedStyle. Press <code className="text-[var(--color-accent)]">t</code> to cycle.
+          orrery. Theme system: fifteen skins from one TypeScript token registry (Observatory through
+          Everforest Light, including Dracula Redefined, Neon City, Catppuccin, Gruvbox, Deep Dark
+          Space, and Andromeda). Colors and fonts apply as CSS custom properties; the canvas recolors
+          via getComputedStyle. Press <code className="text-[var(--color-accent)]">t</code> to cycle.
           Default fonts: Newsreader + IBM Plex Mono. No backend: sessions are scripted and played on a
           virtual clock. Fictional product; Hermes and Nous Portal referenced only in this case-study
           mapping. Process: thesis → art direction → event schema → scripts → five surfaces → pattern

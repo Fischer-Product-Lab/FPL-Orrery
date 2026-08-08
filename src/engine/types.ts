@@ -68,6 +68,10 @@ export type ToolCall = {
   output: string
   resultChip?: string
   stepId?: string
+  /** Virtual time when the tool started */
+  startedAt?: number
+  /** Virtual time when the tool finished */
+  completedAt?: number
 }
 
 export type ThoughtChunk = {

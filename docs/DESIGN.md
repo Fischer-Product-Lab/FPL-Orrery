@@ -26,7 +26,7 @@ Named for the stone that made one decree readable in more than one script. The p
 2. keep the technical layer one reversible gesture away
 3. never ship a dumbed-down fork that deletes evidence
 
-`translate.ts` is the quotable claim: translation is a pure function of the event stream.
+`translate.ts` is the quotable claim: translation is a pure function of the event stream. Rosetta v2 adds an altitude control (Simple / Detailed / Technical), a pinned needs-you dock, and structured work panels so the technical layer is richer, not louder.
 
 ## Type
 
@@ -45,7 +45,7 @@ In the Observatory, motion is the healthy baseline. **Stillness is reserved for 
 
 ## Tokens over literals
 
-Nine skins, one registry. The demo has to survive a theme swap without hunting hex codes. That discipline also keeps the Observatory honest: it cannot cheat with a private palette.
+Fifteen skins, one registry. The demo has to survive a theme swap without hunting hex codes. That discipline also keeps the Observatory honest: it cannot cheat with a private palette.
 
 ## What we refused
 

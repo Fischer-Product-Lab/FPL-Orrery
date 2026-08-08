@@ -124,16 +124,22 @@ Vite · React 19 · TypeScript · Tailwind CSS v4 · Zustand · React Router · 
 
 Default type: [Newsreader](https://fonts.google.com/specimen/Newsreader) + [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)
 
-Nine themes from one token registry (`src/kit/themes.ts`). Colors and fonts bind as CSS custom properties on `<html>`; the canvas recolors via `getComputedStyle`. Choice persists in `localStorage`. Press **`t`** to cycle.
+Fifteen themes from one token registry (`src/kit/themes.ts`). Colors and fonts bind as CSS custom properties on `<html>`; the canvas recolors via `getComputedStyle`. Choice persists in `localStorage`. Press **`t`** to cycle.
 
 | Theme | Mode | Accent / voice |
 | --- | --- | --- |
 | Observatory (default) | dark | phosphor amber · Newsreader + IBM Plex Mono |
+| Andromeda | dark | nebula fuchsia · Sora + JetBrains Mono |
 | Ayu Darkvenom | dark | venom green · Space Grotesk + JetBrains Mono |
+| Catppuccin | dark | Mocha mauve · Nunito + JetBrains Mono |
 | Dark Phoenix | dark | flame · Fraunces + Fira Code |
+| Deep Dark Space | dark | starlight blue on near-black · Spectral + IBM Plex Mono |
+| Dracula Redefined | dark | hotter pink on deeper void · Outfit + Fira Code |
 | Ethereal Omarchy | dark | mist violet · Cormorant + Victor Mono |
+| Gruvbox | dark | warm earth yellow · IBM Plex Serif + Inconsolata |
 | Material | dark | cyan on graphite · Roboto + Roboto Mono |
 | Midnight | dark | moonlight · EB Garamond + DM Mono |
+| Neon City | dark | magenta / cyan rain · Orbitron + Share Tech Mono |
 | Nousromancer | dark | neon teal · Rajdhani + Space Mono |
 | Tokyo Night | dark | storm blue · IBM Plex Sans + JetBrains Mono |
 | Everforest Light | light | sage daylight |
@@ -163,7 +169,7 @@ Deploy target is Vercel (`vercel.json` SPA rewrite). Production URL above.
 If you have ten minutes:
 
 1. Open [/rosetta](https://orrery-orpin.vercel.app/rosetta), play the offsite session, approve the purchase (hold-to-confirm)
-2. Toggle **Show technical detail**, then open the same session in [/console](https://orrery-orpin.vercel.app/console)
+2. Slide the altitude control to **Technical**, then open the same session in [/console](https://orrery-orpin.vercel.app/console)
 3. Sit with [/observatory](https://orrery-orpin.vercel.app/observatory) until an orbit hard-stops
 4. Skim [/patterns/show-the-work](https://orrery-orpin.vercel.app/patterns/show-the-work) and [/study](https://orrery-orpin.vercel.app/study)
 
