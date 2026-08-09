@@ -72,6 +72,7 @@ export function StarEgg() {
       onClick={openGame}
     >
       <span className="star-egg__halo" aria-hidden />
+      <span className="star-egg__ping" aria-hidden />
       <span className="star-egg__ring" aria-hidden />
       <span className="star-egg__ring star-egg__ring--late" aria-hidden />
       <span className="star-egg__core" aria-hidden />

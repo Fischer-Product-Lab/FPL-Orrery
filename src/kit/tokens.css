@@ -318,12 +318,12 @@
     );
   }
 
+  .star-egg__core,
+  .star-egg__halo,
+  .star-egg__ping,
   .star-egg.is-charging .star-egg__ring,
   .star-egg.is-charging .star-egg__ring--late,
-  .star-egg.is-charging .star-egg__halo {
-    animation: none;
-  }
-
+  .star-egg.is-charging .star-egg__halo,
   .star-egg.is-ready .star-egg__core {
     animation: none;
   }
@@ -366,6 +366,8 @@
     0 0 10px var(--color-accent-glow),
     0 0 22px color-mix(in srgb, var(--color-accent) 45%, transparent);
   opacity: 0.75;
+  /* Idle satellite beacon — slow blip while waiting to be noticed */
+  animation: star-egg-beacon 3.2s var(--ease-standard) infinite;
   transition:
     opacity var(--duration-base) var(--ease-standard),
     transform var(--duration-base) var(--ease-standard);
@@ -381,7 +383,18 @@
     transparent 70%
   );
   opacity: 0.35;
+  animation: star-egg-beacon-halo 3.2s var(--ease-standard) infinite;
   transition: opacity 0.4s var(--ease-standard);
+}
+
+.star-egg__ping {
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  animation: star-egg-beacon-ping 3.2s var(--ease-standard) infinite;
 }
 
 .star-egg__ring {
@@ -443,6 +456,13 @@
   animation: star-egg-halo 2.6s var(--ease-standard) forwards;
 }
 
+.star-egg.is-charging .star-egg__ping,
+.star-egg.is-ready .star-egg__ping,
+.star-egg.is-departing .star-egg__ping {
+  animation: none;
+  opacity: 0;
+}
+
 .star-egg.is-charging .star-egg__ring {
   animation: star-egg-ring 2.6s var(--ease-standard) forwards;
 }
@@ -471,6 +491,58 @@
 
 .star-egg.is-departing .star-egg__core {
   animation: star-egg-depart 0.85s var(--ease-entrance) forwards;
+}
+
+@keyframes star-egg-beacon {
+  0%,
+  70%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  78% {
+    opacity: 1;
+    transform: scale(1.12);
+    filter: brightness(1.45);
+  }
+  86% {
+    opacity: 0.7;
+    transform: scale(1.02);
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes star-egg-beacon-halo {
+  0%,
+  70%,
+  100% {
+    opacity: 0.28;
+    transform: scale(1);
+  }
+  78% {
+    opacity: 0.7;
+    transform: scale(1.15);
+  }
+  86% {
+    opacity: 0.4;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes star-egg-beacon-ping {
+  0%,
+  70% {
+    opacity: 0;
+    transform: scale(0.55);
+  }
+  78% {
+    opacity: 0.55;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.85);
+  }
 }
 
 @keyframes star-egg-pulse {
