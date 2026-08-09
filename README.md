@@ -124,7 +124,7 @@ Vite · React 19 · TypeScript · Tailwind CSS v4 · Zustand · React Router · 
 
 Default type: [Newsreader](https://fonts.google.com/specimen/Newsreader) + [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)
 
-Fifteen themes from one token registry (`src/kit/themes.ts`). Colors and fonts bind as CSS custom properties on `<html>`; the canvas recolors via `getComputedStyle`. Choice persists in `localStorage`. Press **`t`** to cycle.
+Sixteen themes from one token registry (`src/kit/themes.ts`). Colors and fonts bind as CSS custom properties on `<html>`; the canvas recolors via `getComputedStyle`. Choice persists in `localStorage`. Press **`t`** to cycle.
 
 | Theme | Mode | Accent / voice |
 | --- | --- | --- |

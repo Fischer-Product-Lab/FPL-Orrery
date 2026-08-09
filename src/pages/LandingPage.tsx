@@ -121,7 +121,7 @@ export function LandingPage() {
             <SectionLabel>Art direction</SectionLabel>
             <h2 className="display mt-2 text-2xl">Tokens over literals</h2>
             <p className="mt-3 text-[13px] leading-relaxed text-[var(--color-text-secondary)]">
-              Console, TUI, companion, and living orrery all paint from one token registry. Fifteen
+              Console, TUI, companion, and living orrery all paint from one token registry. Sixteen
               skins (including soft Everforest Light) swap colors and fonts at runtime. Flat surfaces,
               hairline borders, box-drawing structure. Every mark bound to real session state. Press{' '}
               <span className="text-[var(--color-text)]">t</span> to cycle themes; currently{' '}
