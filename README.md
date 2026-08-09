@@ -124,12 +124,13 @@ Vite · React 19 · TypeScript · Tailwind CSS v4 · Zustand · React Router · 
 
 Default type: [Newsreader](https://fonts.google.com/specimen/Newsreader) + [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)
 
-Sixteen themes from one token registry (`src/kit/themes.ts`). Colors and fonts bind as CSS custom properties on `<html>`; the canvas recolors via `getComputedStyle`. Choice persists in `localStorage`. Press **`t`** to cycle.
+Seventeen themes from one token registry (`src/kit/themes.ts`). Observatory first; the rest alphabetical by name. Colors and fonts bind as CSS custom properties on `<html>`; the canvas recolors via `getComputedStyle`. Choice persists in `localStorage`. Press **`t`** to cycle.
 
 | Theme | Mode | Accent / voice |
 | --- | --- | --- |
 | Observatory (default) | dark | phosphor amber · Newsreader + IBM Plex Mono |
 | Andromeda | dark | nebula fuchsia · Sora + JetBrains Mono |
+| Aura Spirit Dracula | dark | soft void purple · Manrope + Fira Code |
 | Ayu Darkvenom | dark | venom green · Space Grotesk + JetBrains Mono |
 | Catppuccin | dark | Mocha mauve · Nunito + JetBrains Mono |
 | Dark Phoenix | dark | flame · Fraunces + Fira Code |
@@ -137,12 +138,13 @@ Sixteen themes from one token registry (`src/kit/themes.ts`). Colors and fonts b
 | Dracula Redefined | dark | hotter pink on deeper void · Outfit + Fira Code |
 | Ethereal Omarchy | dark | mist violet · Cormorant + Victor Mono |
 | Gruvbox | dark | warm earth yellow · IBM Plex Serif + Inconsolata |
+| Kanagawa Dragon | dark | ink-black, wave yellow · IBM Plex Sans + Mono |
 | Material | dark | cyan on graphite · Roboto + Roboto Mono |
 | Midnight | dark | moonlight · EB Garamond + DM Mono |
 | Neon City | dark | magenta / cyan rain · Orbitron + Share Tech Mono |
 | Nousromancer | dark | neon teal · Rajdhani + Space Mono |
 | Tokyo Night | dark | storm blue · IBM Plex Sans + JetBrains Mono |
-| Everforest Light | light | sage daylight |
+| Vesper | dark | near-black charcoal, warm gold · Inter + JetBrains Mono |
 
 Art direction in short: precision instrument / observatory log. Tokens over literals. Hairline borders, box-drawing structure. No glassmorphism, decorative gradients, or template chrome. The orrery is line-work only; every mark is bound to state.
 

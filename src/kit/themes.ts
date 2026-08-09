@@ -41,12 +41,12 @@ export const DEFAULT_THEME_ID = 'observatory'
 
 /** Migrate retired theme ids */
 export function resolveThemeId(id: string): string {
-  if (id === 'vellum') return 'everforest-light'
+  if (id === 'vellum' || id === 'everforest-light') return 'observatory'
   if (id === 'everforest') return 'tokyo-night'
   return id
 }
 
-/** Observatory first, Everforest Light last; middle alphabetical by name */
+/** Observatory first; remainder alphabetical by name */
 export const themes: ThemeDef[] = [
   {
     id: 'observatory',
@@ -337,6 +337,35 @@ export const themes: ThemeDef[] = [
     },
   },
   {
+    id: 'kanagawa-dragon',
+    name: 'Kanagawa Dragon',
+    tagline: 'Ink-black night, muted wave yellow',
+    isDark: true,
+    fontsHref:
+      'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap',
+    tokens: {
+      '--color-bg': '#181616',
+      '--color-surface': '#1d1c19',
+      '--color-surface-raised': '#282727',
+      '--color-hairline': 'rgba(197, 201, 197, 0.12)',
+      '--color-hairline-strong': 'rgba(197, 201, 197, 0.22)',
+      '--color-text': '#c5c9c5',
+      '--color-text-secondary': '#a6a69c',
+      '--color-text-tertiary': '#625e5a',
+      '--color-accent': '#c8c093',
+      '--color-accent-dim': 'rgba(200, 192, 147, 0.14)',
+      '--color-accent-glow': 'rgba(200, 192, 147, 0.28)',
+      '--color-success': '#87a987',
+      '--color-success-dim': 'rgba(135, 169, 135, 0.14)',
+      '--color-danger': '#c4746e',
+      '--color-danger-dim': 'rgba(196, 116, 110, 0.14)',
+      '--color-warning': '#c4b28a',
+      '--color-warning-dim': 'rgba(196, 178, 138, 0.14)',
+      '--font-serif': sansStack('IBM Plex Sans'),
+      '--font-mono': monoStack('IBM Plex Mono'),
+    },
+  },
+  {
     id: 'material',
     name: 'Material',
     tagline: 'Material Darker - cyan on graphite',
@@ -482,32 +511,32 @@ export const themes: ThemeDef[] = [
     },
   },
   {
-    id: 'everforest-light',
-    name: 'Everforest Light',
-    tagline: 'Soft sage daylight - the gentle light theme',
-    isDark: false,
+    id: 'vesper',
+    name: 'Vesper',
+    tagline: 'Near-black charcoal, warm gold accent',
+    isDark: true,
     fontsHref:
-      'https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap',
+      'https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap',
     tokens: {
-      '--color-bg': '#fdf6e3',
-      '--color-surface': '#f4f0d9',
-      '--color-surface-raised': '#efebd4',
-      '--color-hairline': 'rgba(92, 106, 114, 0.14)',
-      '--color-hairline-strong': 'rgba(92, 106, 114, 0.24)',
-      '--color-text': '#5c6a72',
-      '--color-text-secondary': '#708089',
-      '--color-text-tertiary': '#939f91',
-      '--color-accent': '#8da101',
-      '--color-accent-dim': 'rgba(141, 161, 1, 0.12)',
-      '--color-accent-glow': 'rgba(141, 161, 1, 0.22)',
-      '--color-success': '#93b259',
-      '--color-success-dim': 'rgba(147, 178, 89, 0.14)',
-      '--color-danger': '#f85552',
-      '--color-danger-dim': 'rgba(248, 85, 82, 0.12)',
-      '--color-warning': '#dfa000',
-      '--color-warning-dim': 'rgba(223, 160, 0, 0.14)',
-      '--font-serif': serifStack('Source Serif 4'),
-      '--font-mono': monoStack('Source Code Pro'),
+      '--color-bg': '#101010',
+      '--color-surface': '#161616',
+      '--color-surface-raised': '#1c1c1c',
+      '--color-hairline': 'rgba(255, 255, 255, 0.10)',
+      '--color-hairline-strong': 'rgba(255, 255, 255, 0.20)',
+      '--color-text': '#ffffff',
+      '--color-text-secondary': '#b7b7b7',
+      '--color-text-tertiary': '#505050',
+      '--color-accent': '#ffc799',
+      '--color-accent-dim': 'rgba(255, 199, 153, 0.14)',
+      '--color-accent-glow': 'rgba(255, 199, 153, 0.30)',
+      '--color-success': '#99ffe4',
+      '--color-success-dim': 'rgba(153, 255, 228, 0.14)',
+      '--color-danger': '#ff8080',
+      '--color-danger-dim': 'rgba(255, 128, 128, 0.14)',
+      '--color-warning': '#e6b99d',
+      '--color-warning-dim': 'rgba(230, 185, 157, 0.14)',
+      '--font-serif': sansStack('Inter'),
+      '--font-mono': monoStack('JetBrains Mono'),
     },
   },
 ]

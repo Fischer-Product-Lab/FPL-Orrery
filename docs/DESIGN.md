@@ -45,7 +45,7 @@ In the Observatory, motion is the healthy baseline. **Stillness is reserved for 
 
 ## Tokens over literals
 
-Sixteen skins, one registry. The demo has to survive a theme swap without hunting hex codes. That discipline also keeps the Observatory honest: it cannot cheat with a private palette.
+Seventeen skins, one registry. The demo has to survive a theme swap without hunting hex codes. That discipline also keeps the Observatory honest: it cannot cheat with a private palette.
 
 ## What we refused
 
